@@ -1,0 +1,60 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: Impact, sans-serif;
+}
+
+h3 {
+    color: #999;
+}
+
+.center {
+    margin: auto;
+    width: 90%;
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+.box {
+    width: 300px;
+    background-color: #444;
+    text-align: left;
+    padding: 15px;
+    margin-left: 15px;
+    float: left;
+}
+
+#icon {
+    display: block;
+    float: left;
+}
+
+input#first,
+input#second {
+    display: block;
+    float: left;
+    margin: 13px 25px;
+    height: 35px;
+    width: 200px;
+    font-size: 20px;
+}
+
+div.input {
+    height: 100px;
+    margin: auto;
+    width: 575px;
+}
+
+button {
+    font-size: 20px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#result {
+    padding: 15px;
+    padding-top: 30px;
+}
