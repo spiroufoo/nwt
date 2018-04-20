@@ -16,7 +16,7 @@ class GithubController extends Controller
     public function api() {
         return response()->json(
             [
-                'compare_url' => "http://localhost/nwt/public/compare/{owner1}/{repo1}/{owner2}/{repo2}"
+                'compare_url' => "http://nwt.upcor.se/public/compare/{owner1}/{repo1}/{owner2}/{repo2}"
             ]);
     }
 
