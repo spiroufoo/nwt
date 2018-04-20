@@ -22,12 +22,17 @@ class GithubController extends Controller
 
     public function compare($owner1, $repo1, $owner2, $repo2) {
         $github_url = "https://api.github.com/";
+        $github_obj = self::get($github_url);
+
 
         // fetch the first repository
-        $repo1_url = $repo2_url = $repository_url = self::get($github_url)->repository_url;
+        $repo1_url = $repo2_url = $repository_url = $github_obj->repository_url;
         $repo1_url = str_replace("{owner}", $owner1, $repo1_url);
         $repo1_url = str_replace("{repo}", $repo1, $repo1_url);
         $repo1_obj = self::get($repo1_url);
+        if(property_exists($repo1_obj, 'message')) {
+            return response()->json(['message' => "First repository not found"]);
+        }
         $pulls1_url = $repo1_obj->pulls_url;
         $pulls1_url = str_replace("{/number}", "", $pulls1_url);
         $pulls1_obj = self::get($pulls1_url);
@@ -37,6 +42,9 @@ class GithubController extends Controller
         $repo2_url = str_replace("{owner}", $owner2, $repo2_url);
         $repo2_url = str_replace("{repo}", $repo2, $repo2_url);
         $repo2_obj = self::get($repo2_url);
+        if(property_exists($repo1_obj, 'message')) {
+            return response()->json(['message' => "Second repository not found"]);
+        }
         $pulls2_url = $repo2_obj->pulls_url;
         $pulls2_url = str_replace("{/number}", "", $pulls2_url);
         $pulls2_obj = self::get($pulls2_url);
