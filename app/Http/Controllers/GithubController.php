@@ -31,7 +31,7 @@ class GithubController extends Controller
         $repo1_url = str_replace("{repo}", $repo1, $repo1_url);
         $repo1_obj = self::get($repo1_url);
         if(property_exists($repo1_obj, 'message')) {
-            return response()->json(['message' => "First repository not found"], 404);
+            return response()->json(['message' => "First repository not found"], 200);
         }
         $pulls1_url = $repo1_obj->pulls_url;
         $pulls1_url = str_replace("{/number}", "", $pulls1_url);
@@ -43,7 +43,7 @@ class GithubController extends Controller
         $repo2_url = str_replace("{repo}", $repo2, $repo2_url);
         $repo2_obj = self::get($repo2_url);
         if(property_exists($repo2_obj, 'message')) {
-            return response()->json(['message' => "Second repository not found"], 404);
+            return response()->json(['message' => "Second repository not found"], 200);
         }
         $pulls2_url = $repo2_obj->pulls_url;
         $pulls2_url = str_replace("{/number}", "", $pulls2_url);
