@@ -42,7 +42,7 @@ class GithubController extends Controller
         $repo2_url = str_replace("{owner}", $owner2, $repo2_url);
         $repo2_url = str_replace("{repo}", $repo2, $repo2_url);
         $repo2_obj = self::get($repo2_url);
-        if(property_exists($repo1_obj, 'message')) {
+        if(property_exists($repo2_obj, 'message')) {
             return response()->json(['message' => "Second repository not found"], 404);
         }
         $pulls2_url = $repo2_obj->pulls_url;
