@@ -9,6 +9,11 @@ Project to compare two github repositories
 * resources/views/nwt.php
 * routes/web.php
 
+## Installation (bash)
+
+* Install composer: `curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer`
+* Update prerequisites: `composer update`
+
 ## Rest API
 
 ### Schema
