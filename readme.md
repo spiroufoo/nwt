@@ -1,5 +1,14 @@
 # PHP Developer Assignment
 
+Project to compare two github repositories
+
+## Relevant files
+
+* app/Http/Controllers/GithubController.php
+* public/js/nwt.js
+* resources/views/nwt.php
+* routes/web.php
+
 ## Rest API
 
 ### Schema
