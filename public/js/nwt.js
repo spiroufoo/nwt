@@ -7,7 +7,7 @@
             var first_slash_count = (first.match(/\//g) || []).length;
             var second_slash_count = (second.match(/\//g) || []).length;
             if(first.match(format) && second.match(format) && first_slash_count == 1 && second_slash_count == 1) {
-                var rest_url = "/nwt/public/compare/" + first + "/" + second;
+                var rest_url = "/public/compare/" + first + "/" + second;
                 $("#result").html('<img alt="Loading.." src="/nwt/public/ajax-loader.gif" />');
                 $.ajax({
                     type: "GET",
